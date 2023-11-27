@@ -1,1 +1,1 @@
-Flask Flask-CORS rasa[spacy] asyncio
+flask flask-cors rasa asyncio
