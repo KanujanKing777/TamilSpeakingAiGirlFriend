@@ -2,3 +2,7 @@ flask
 flask-cors
 rasa 
 asyncio
+scipy
+numpy
+scikit
+scikit-learn
