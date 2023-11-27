@@ -1,1 +1,4 @@
-flask flask-cors rasa asyncio
+flask
+flask-cors
+rasa 
+asyncio
