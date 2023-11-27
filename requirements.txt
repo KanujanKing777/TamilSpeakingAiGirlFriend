@@ -4,5 +4,4 @@ rasa
 asyncio
 scipy
 numpy
-scikit
 scikit-learn
