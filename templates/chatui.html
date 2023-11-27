@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Girl Friend</title>
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename = 'favicon.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'chatui.css') }}">
+    
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <div id="user-input">
+            <input type="text" id="user-message" placeholder="Type your message..." onkeypress = "handleKeyPress(event)"> 
+            <button id="send-button" onclick="sendMessage()">&#11166;</button>
+        </div>
+    </div>
+    <script>
+        function handleKeyPress(event) {
+            // Check if the pressed key is Enter (key code 13)
+            if (event.keyCode === 13) {
+                // Trigger a click event on the button with ID 'hi'
+                sendMessage();
+            }
+        }
+        function sendMessage() {
+            var userMessage = document.getElementById('user-message').value;
+            if (userMessage.trim() === '') {
+                return;
+            }
+        
+            var chatMessages = document.getElementById('chat-messages');
+        
+            // User message
+            var userBubble = document.createElement('div');
+            userBubble.className = 'message user-message';
+            userBubble.textContent = userMessage;
+            chatMessages.appendChild(userBubble);
+
+            const url = 'http://localhost:5000/webhook';
+            const data = {
+                message: userMessage
+            };
+            // Send user message to the server
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Bot response
+                
+                var datum = data.message;
+                for(let i=0; i<datum.length; i++){
+                    var botBubble = document.createElement('div');
+                    botBubble.className = 'message bot-message';
+                    botBubble.textContent = datum[i].text;
+                    chatMessages.appendChild(botBubble);
+                }
+                document.getElementById('user-message').value = ''; // Clear the input field
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the latest message
+            });
+
+        }
+
+    </script>
+</body>
+</html>
