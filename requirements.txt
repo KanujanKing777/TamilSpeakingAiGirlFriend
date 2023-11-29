@@ -20,7 +20,6 @@ bidict
 blinker
 boto3
 botocore
-ca-certificates
 cachecontrol 
 cachetools 
 certifi 
