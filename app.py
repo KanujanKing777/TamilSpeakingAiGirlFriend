@@ -5,7 +5,7 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder= "templates")
 CORS(app)
 # Load Rasa model
-agent = Agent.load("C:\\Users\\Kanujan\\Desktop\\Kanujan\\Projects\\aigi\\my-models")
+agent = Agent.load("./models")
 
 @app.route("/signin")
 def signin():
