@@ -137,7 +137,6 @@ six
 sklearn-crfsuite 
 slack-sdk 
 sqlalchemy 
-sqlite 
 structlog 
 structlog-sentry 
 tabulate 
