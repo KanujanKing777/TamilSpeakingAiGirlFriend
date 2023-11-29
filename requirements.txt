@@ -109,7 +109,6 @@ python-dateutil
 python-engineio 
 python-socketio 
 pytz 
-pywin32 
 pyyaml 
 questionary 
 randomname 
