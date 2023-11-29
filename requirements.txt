@@ -104,7 +104,6 @@ pymongo
 pyparsing 
 pyreadline3 
 pyrsistent 
-python 
 python-crfsuite 
 python-dateutil 
 python-engineio 
