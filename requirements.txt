@@ -81,7 +81,6 @@ multidict
 networkx 
 numpy 
 oauthlib 
-openssl 
 opt-einsum 
 packaging 
 pamqp 
