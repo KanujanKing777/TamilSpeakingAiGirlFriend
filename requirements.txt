@@ -69,7 +69,6 @@ jsonschema
 keras 
 kiwisolver 
 libclang 
-libffi 
 locket 
 magic-filter 
 markdown 
