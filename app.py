@@ -1,6 +1,19 @@
+import pyrebase
 from flask import Flask, request, jsonify, render_template
 from rasa.core.agent import Agent
 from flask_cors import CORS
+
+config = {
+    "apiKey": "AIzaSyAhnX2Yc09kQjeiuSTFQW_rd796RF7vUPc",
+    "authDomain": "tamilspeakingaigirlfriend.firebaseapp.com",
+    "databaseURL": "https://tamilspeakingaigirlfriend-default-rtdb.firebaseio.com",
+    "projectId": "tamilspeakingaigirlfriend",
+    "storageBucket": "tamilspeakingaigirlfriend.appspot.com",
+    "messagingSenderId": "820736637033",
+    "appId": "1:820736637033:web:4a2042f9c336c5cafecaf8",
+    "measurementId": "G-8H1E29GJVC"
+}
+firebase = pyrebase.initialize_app(config)
 
 app = Flask(__name__, static_folder= "templates")
 CORS(app)
